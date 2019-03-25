@@ -79,9 +79,13 @@ $(".crystal-image").on("click", function () {
 
     //function to reset values
     function reset() {
+        //reset the random number to be guessed
         targetNumber = 12 + Math.floor(Math.random() * 108);
         $("#number-to-guess").text(targetNumber);
 
+        //reset the crystal values
+
+        
     };
 
     // All of the same game win-lose logic applies. So the rest remains unchanged.

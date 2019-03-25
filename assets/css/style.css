@@ -1,4 +1,29 @@
+body {
+    background-color: lightblue;
+
+}
+
 .crystal-image {
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
   }
+
+  #Title {
+      color: white;
+      padding: 10px;
+      background-color: orange;
+      border-style: dotted;
+  }
+
+  #Instructions {
+    background-color: #f8E6D0;
+    color:black;
+    border-style: dotted;
+  }
+
+  #Stats {
+    color: black;
+    background-color: white;
+    border-style: dotted;
+  }
+

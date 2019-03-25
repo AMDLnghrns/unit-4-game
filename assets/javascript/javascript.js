@@ -33,9 +33,6 @@ var counter = 0;
 $("#counter").text(counter);
 var counterText = $("#counter")
 
-
-
-
 // Now for the hard part. Creating multiple crystals each with their own unique number value.
 // An array of random numbers that will be assigned to the crystals.
 var numberOptions = [randomValue[0], randomValue[1], randomValue[2], randomValue[3]];
@@ -43,7 +40,6 @@ var numberOptions = [randomValue[0], randomValue[1], randomValue[2], randomValue
 for (var i = 0; i < numberOptions.length; i++) {
     console.log("Crystal: " + numberOptions[i]);
 }
-
 
 // Next we create a for loop to create crystals for every numberOption.
 for (var i = 0; i < numberOptions.length; i++) {
@@ -80,20 +76,29 @@ $(".crystal-image").on("click", function () {
     // Every click, from every crystal adds to the global counter.
     counter += crystalValue;
 
+
+    //function to reset values
+    function reset() {
+        targetNumber = 12 + Math.floor(Math.random() * 108);
+        $("#number-to-guess").text(targetNumber);
+
+    };
+
     // All of the same game win-lose logic applies. So the rest remains unchanged.
     console.log("Counter: " + counter);
-    counterText.text(counter);
+    counterText.text(counter)
 
     if (counter === targetNumber) {
         wins++;
         counter = 0;
         winsText.text(wins)
-        alert("Wins: " + wins);
-        console.log("Wins: " + wins);
+        reset();
+
     } else if (counter >= targetNumber) {
         losses++;
         counter = 0;
         loseText.text(losses);
+        reset();
     }
 
 });

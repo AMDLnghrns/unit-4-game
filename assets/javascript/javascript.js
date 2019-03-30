@@ -8,6 +8,14 @@ for (var i = 0, t = 12; i < t; i++) {
     randomValue.push(Math.floor(Math.random() * t + 1))
 }
 
+resetCrystals()
+
+function resetCrystals() {
+    for (var i = 0, t = 12; i < t; i++) {
+        randomValue.push(Math.floor(Math.random() * t + 1))
+    }
+}
+
 //random number to guess
 var targetNumber = 12 + Math.floor(Math.random() * 108);
 //add targetNumber to "number-to-guess" HTML id
@@ -84,8 +92,6 @@ $(".crystal-image").on("click", function () {
         $("#number-to-guess").text(targetNumber);
         counter = 0;
 
-        //reset the crystal values
-
     };
 
     // All of the same game win-lose logic applies. So the rest remains unchanged.
@@ -96,11 +102,13 @@ $(".crystal-image").on("click", function () {
         wins++;
         winsText.text(wins)
         reset();
+        resetCrystals();
 
     } else if (counter >= targetNumber) {
         losses++;
         loseText.text(losses);
         reset();
+        resetCrystals();
     }
 
 });
